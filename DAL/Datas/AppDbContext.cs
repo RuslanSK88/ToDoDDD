@@ -1,4 +1,5 @@
 ﻿
+using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Datas;
@@ -9,5 +10,7 @@ public class AppDbContext : DbContext
     {
 
     }
-    //public DbSet
+    public DbSet<Goal> Goals { get; set; }
+    public DbSet<Status> Statuses { get; set; }
+    public DbSet<Priority> Priorities { get; set; }
 }
