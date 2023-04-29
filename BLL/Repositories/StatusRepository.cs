@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using DAL.Datas;
+using DAL.Entities;
 
-namespace BLL.Repositories
+namespace BLL.Repositories;
+
+public class StatusRepository : Repository<Status>
 {
-    internal class StatusRepository
+    private readonly AppDbContext _db;
+    public StatusRepository(AppDbContext db) : base(db)
     {
+        _db = db;
     }
 }

@@ -12,7 +12,6 @@ public class UnitOfWork
     {
         context = _context;
     }
-
     private GoalRepository goalRepository;
     private StatusRepository statusRepository;
     private PriorityRepository priorityRepository;
@@ -43,13 +42,14 @@ public class UnitOfWork
     {
         get
         {
-            if (statusRepository == null)
+            if (priorityRepository == null)
             {
                 priorityRepository = new PriorityRepository(context);
             }
             return priorityRepository;
         }
     }
+
     public void Save()
     {
         context.SaveChanges();

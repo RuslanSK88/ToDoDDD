@@ -1,0 +1,20 @@
+﻿
+@model DAL.Entities.Goal
+
+@{
+    ViewData["Title"] = "Задача: " + Model.Name;
+}
+
+<h1>Задача: @Model.Name</h1>
+<hr />
+<div>
+    <a asp-action="Index" class="btn btn-secondary">
+        <svg width="16" height="16" fill="currentColor" 
+            class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+        </svg>
+        Вернуться к списку
+    </a>
+    <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-danger">Удалить</a>
+</div>
+
